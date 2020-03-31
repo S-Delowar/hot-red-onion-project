@@ -1,0 +1,23 @@
+.jumbotron {
+    margin-top: 80px;
+    background-image: url("../../Image/bannerbackground.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    height: 80vh;
+}
+.banner {
+    text-align: justify;
+    margin: 100px 25%;
+}
+.foodTime {
+    margin-top: 30px;
+    text-align: center;
+}
+.foodTime button {
+    margin-right: 30px;
+    padding: 5px;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+}

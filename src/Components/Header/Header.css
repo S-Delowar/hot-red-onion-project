@@ -1,0 +1,10 @@
+
+img {
+    width:200px;
+    height: 55px;
+}
+.signUpBtn {
+    background-color: #ff4565;
+    border-radius: 20px;
+    padding: 2px 10px;
+}

@@ -1,0 +1,32 @@
+.food-area nav li{
+    color: black;
+    cursor: pointer;
+    font-weight: 600;
+}
+nav .active {
+    color: red;
+}
+.food-area nav .active::after{
+    content: "";
+    width: 80%;
+    margin: 0 auto;
+    height: 2px;
+    background-color: rgb(255, 69, 101);
+    display: block;
+    
+}
+
+
+.food-area .card {
+    border: none;
+}
+.food-area .card-img{
+    width: 60%;
+    height: auto;
+    display: block;
+    padding-top: 10px;
+    margin: 0 auto;
+}
+.food-area .card:hover{
+    box-shadow: 0 5px 13px 0px #c9c6c67a;
+}

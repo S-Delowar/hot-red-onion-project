@@ -1,0 +1,11 @@
+.collapse-btn {
+    cursor: pointer;
+    color: rgb(68, 138, 250);
+    font-weight: 600;
+}
+
+.collapse-btn .icon {
+    color: rgb(6, 189, 6);
+    font-size: 1.3em;
+    margin-left: 10px;
+}

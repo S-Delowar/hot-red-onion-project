@@ -1,0 +1,13 @@
+.features-area .card img {
+    height: auto;
+}
+.features-area .card {
+    border: none;
+}
+.features-area .card:hover{
+    box-shadow: 0 5px 13px 0px #8b89897a;
+}
+.features-area .card .feature-icon {
+    height: 40px;
+    width: 40px;
+}
