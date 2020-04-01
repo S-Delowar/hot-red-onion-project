@@ -3,17 +3,38 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
-import Features from './Components/Features/Features';
-import Footer from './Components/Footer/Footer';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import NotFound from './Components/NotFound/NotFound';
+import FoodItemDetails from './Components/FoodItemDetails/FoodItemDetails';
+
 
 
 function App() {
   return (
     <div>
      <Header></Header>
-     <Home></Home>
-     <Features></Features>
-     <Footer></Footer>
+     
+     <Router>
+       <Switch>
+         <Route path="/home">
+            <Home></Home>
+         </Route>
+         <Route exact path="/">
+              <Home></Home>
+         </Route>
+         <Route path="/food/:foodId">
+            <FoodItemDetails></FoodItemDetails>
+         </Route>
+         <Route path="*">
+           <NotFound></NotFound>
+         </Route>
+       </Switch>
+     </Router>
+     
     </div>
   );
 }

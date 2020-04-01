@@ -2,6 +2,9 @@ import React from 'react';
 import './Home.css';
 import { Jumbotron, Form, FormControl, Button } from 'react-bootstrap';
 import FoodArea from '../FoodArea/FoodArea';
+import Features from '../Features/Features';
+import Footer from '../Footer/Footer';
+
 
 const Home = () => {
     return (
@@ -17,6 +20,8 @@ const Home = () => {
                 </div>
             </Jumbotron>
             <FoodArea></FoodArea>
+           <Features></Features>
+           <Footer></Footer>
         </div>
 
     );
