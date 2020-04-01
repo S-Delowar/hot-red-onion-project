@@ -1,3 +1,19 @@
 .foodItemDetails {
-    margin-top: 100px;
+    margin-top: 150px;
+}
+.foodItemDetails .shownImage {
+    display: block;
+    width: 80%;
+    height: auto;
+    padding-bottom: 50px;
+}
+.small-img {
+    padding: 7px;
+    display: block;
+    width: 35%;
+    height: auto;
+    cursor: pointer;   
+}
+.active-small-img{
+    border: 1px solid lightgray;
 }
