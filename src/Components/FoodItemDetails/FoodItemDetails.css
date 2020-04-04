@@ -17,3 +17,7 @@
 .active-small-img{
     border: 1px solid lightgray;
 }
+.success-message {
+    animation: show-hide 1.5s ease-in-out  1 forwards;
+    font-style: italic;
+}

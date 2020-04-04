@@ -5,8 +5,11 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import AllFoods from '../Data/foods.json';
 import FoodItem from '../FoodItem/FoodItem';
+import { useAuth } from '../Login/useAuth';
+import { Link } from 'react-router-dom';
 
 const FoodArea = () => {
+    const auth = useAuth();
 
     const [foods, setFoods] = useState([]);
     const [selectedFoodType, setSelectedFoodType] = useState('Breakfast');
@@ -37,7 +40,14 @@ const FoodArea = () => {
                 }
             </div>
             <div className="text-center mt-3 ">
-                <button className="btn btn-danger btn-secondary">Check Out Your Food</button>
+                <Link to="shipment">
+                {
+                    auth.user ?
+                    <button className="btn btn-danger btn-secondary">Check Out Your Food</button>
+                    :
+                    <button  className="btn btn-danger btn-secondary">Check Out Your Food</button>
+                }
+                </Link>
             </div>
         </div>
     );

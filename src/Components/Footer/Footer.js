@@ -11,34 +11,34 @@ const Footer = () => {
                         <img src={logo} alt="" />
                     </div>
                     <div className="col-3">
-                        <ul class="nav flex-column ">
-                            <li class="nav-item">
-                                <a class="nav-link " href="#">About online food</a>
+                        <ul className="nav flex-column ">
+                            <li className="nav-item">
+                                <a className="nav-link " href="#">About online food</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Read our blog</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Read our blog</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Sign up to deliver</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Sign up to deliver</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Add your restaurant</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Add your restaurant</a>
                             </li>
                         </ul>
                     </div>
                     <div className="col-3">
-                        <ul class="nav flex-column ">
-                            <li class="nav-item">
-                                <a class="nav-link " href="#">Get help</a>
+                        <ul className="nav flex-column ">
+                            <li className="nav-item">
+                                <a className="nav-link " href="#">Get help</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Read FAQs</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Read FAQs</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">View all cities</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">View all cities</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Restaurants near me</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Restaurants near me</a>
                             </li>
                         </ul>
                     </div>
@@ -48,15 +48,15 @@ const Footer = () => {
                         <small>Copyright © 2020 Online Food</small>
                     </div>
                     <div className="col-4">
-                        <ul class="nav justify-content-end">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Privacy Policy</a>
+                        <ul className="nav justify-content-end">
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Privacy Policy</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Terms of use</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Terms of use</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Pricing</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Pricing</a>
                             </li>
                             
                         </ul>
