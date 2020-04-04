@@ -47,15 +47,31 @@ const getUser = user => {
 
 const Auth = () => {
     const [user, setUser] = useState(null)
-    const provider = new firebase.auth.GoogleAuthProvider();
-    const signInWithGoogle = () => {
-        return firebase.auth().signInWithPopup(provider)
+
+    const signIn = (email, password) => {
+        return firebase.auth().signInWithEmailAndPassword(email,password)
         .then(res => {
             const signedInUser = getUser(res.user);  
             setUser(signedInUser);
             return res.user;
         })
         .catch(err => {
+            setUser(null);
+            return err.message;
+        })
+    }
+    const signUp = (email, password, name) => {
+        return firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then(res => {
+            firebase.auth().currentUser.updateProfile({
+                displayName: name
+            })
+            .then(()=> {
+                setUser(res.user);
+                return res.user;
+            })
+        })
+        .catch(err =>{
             setUser(null);
             return err.message;
         })
@@ -83,7 +99,8 @@ const Auth = () => {
 
     return {
         user,
-        signInWithGoogle,
+        signIn,
+        signUp,
         signOut
     }
 };

@@ -40,14 +40,14 @@ const FoodArea = () => {
                 }
             </div>
             <div className="text-center mt-3 ">
-                <Link to="shipment">
+                
                 {
                     auth.user ?
                     <button className="btn btn-danger btn-secondary">Check Out Your Food</button>
                     :
                     <button  className="btn btn-danger btn-secondary">Check Out Your Food</button>
                 }
-                </Link>
+                
             </div>
         </div>
     );

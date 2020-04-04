@@ -1,0 +1,22 @@
+.sign-up-page {
+    background-image: url(../../Image/signup-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
+    height: calc(100vh - 77px);
+    box-sizing: content-box;
+    
+}
+.main-part {
+    margin-left: 500px;
+}
+.logo img {
+    height: 80px;
+    width: auto;
+    margin-top: 100px;
+}
+
+.sign-up-page input{
+    margin-top: 20px;
+    width: 50%;
+}
