@@ -1,7 +1,7 @@
 import React from 'react';
 import * as firebase from "firebase/app";
 import "firebase/auth";
-import firebaseConfig from '../../firebaseConfig';
+import firebaseConfig from '../../firebase.config';
 import { useState } from 'react';
 import { createContext } from 'react';
 import { useContext } from 'react';
