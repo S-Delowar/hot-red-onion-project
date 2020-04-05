@@ -1,0 +1,8 @@
+.order-complete {
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+.order-status {
+    background-color: lightgray;
+    padding: 30px;
+}

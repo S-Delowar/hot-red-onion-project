@@ -19,10 +19,11 @@ import Login from './Components/Login/Login';
 import { createContext } from 'react';
 import { AuthContextProvider, PrivateRoute } from './Components/Login/useAuth';
 import Shipment from './Components/Shipment/Shipment';
+import OrderComplete from './Components/OrderComplete/OrderComplete';
 
 
 function App() {
-  
+
   const [cart, setCart] = useState([]);
   const clearCart = () => {
     setCart([])
@@ -41,7 +42,21 @@ function App() {
       setCart(newCart);
     }
   }
-
+  // for shipment section:
+  const [deliveryDetails, setDeliveryDetails] = useState({
+    toDoor: null, road: null, flat: null, businessName: null, address: null
+  })
+  const deliveryDetailsHandler = data => setDeliveryDetails(data);
+  const checkOutItemHandler = (prdctId, prdctQuantity) => {
+    const newCart = cart.map(item => {
+      if (item.id == prdctId) {
+        item.quantity = prdctQuantity
+      }
+      return item;
+    })
+    const filterCart = newCart.filter(item => item.quantity > 0)
+    setCart(filterCart);
+  }
 
   return (
     <div>
@@ -51,7 +66,7 @@ function App() {
             <Route exact path="/">
               <Header cart={cart}></Header>
               <Banner></Banner>
-              <FoodArea></FoodArea>
+              <FoodArea cart={cart}></FoodArea>
               <Features></Features>
               <Footer></Footer>
             </Route>
@@ -61,18 +76,27 @@ function App() {
               <Footer></Footer>
             </Route>
             <Route path="/login">
-              <Header cart={cart}></Header>
               <Login></Login>
+              <Footer></Footer>
             </Route>
             <PrivateRoute path="/shipment">
-              <Shipment></Shipment>
+              <Header cart={cart}></Header>
+              <Shipment
+                deliveryDetails={deliveryDetails} deliveryDetailsHandler={deliveryDetailsHandler} cart={cart} clearCart={clearCart} checkOutItemHandler={checkOutItemHandler} >
+              </Shipment>
+              <Footer></Footer>
+            </PrivateRoute>
+            <PrivateRoute path="/order-status">
+            <Header cart={cart}></Header>
+              <OrderComplete></OrderComplete>
+              <Footer></Footer>
             </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
           </Switch>
         </Router>
-        </AuthContextProvider>
+      </AuthContextProvider>
     </div>
   );
 }

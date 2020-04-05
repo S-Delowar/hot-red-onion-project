@@ -23,8 +23,8 @@ const FoodItemDetails = (props) => {
     const [count, setCount] = useState(1);
     const [isSuccess, setIsSuccess] = useState(false);
 
-    useState(()=>{
-        if(currentFood.count){
+    useState(() => {
+        if (currentFood.count) {
             setCount(currentFood.count)
         }
     }, [currentFood.count])
@@ -36,8 +36,8 @@ const FoodItemDetails = (props) => {
         props.cartHandler(crrFd)
         setIsSuccess(true);
 
-        }
-    if(isSuccess){
+    }
+    if (isSuccess) {
         setTimeout(() => {
             setIsSuccess(false)
         }, 1500);
@@ -51,7 +51,7 @@ const FoodItemDetails = (props) => {
     // }
 
     return (
-        <div>
+        <div className="food-details-section" >
             <div className="container foodItemDetails d-flex">
                 <div className="row"><div className="col-6">
                     <h1>{name}</h1>
@@ -59,20 +59,20 @@ const FoodItemDetails = (props) => {
                     <div className="row d-flex">
                         <h3>${price}</h3>
                         <div className="count ">
-            <button onClick={()=> setCount(count === 1? 1: count - 1)} className="btn mr-2 ">-</button>
-            {count}
-            <button onClick={()=> setCount(count + 1)} className="btn ml-2">+</button>
+                            <button onClick={() => setCount(count === 1 ? 1 : count - 1)} className="btn mr-2 ">-</button>
+                            {count}
+                            <button onClick={() => setCount(count + 1)} className="btn ml-2">+</button>
 
-        </div>
+                        </div>
                     </div>
-                    <br/>
+                    <br />
                     <div className="d-flex">
-                    <button className="btn btn-danger mr-4" onClick={()=> handleAddFood(currentFood)} >
-                        <FontAwesomeIcon icon={faCartPlus} /> Add
+                        <button className="btn btn-danger mr-4" onClick={() => handleAddFood(currentFood)} >
+                            <FontAwesomeIcon icon={faCartPlus} /> Add
                     </button>
-                    {
-                        isSuccess && <p className="success-message text-success" >Item added to list successfully</p>
-                    }                    
+                        {
+                            isSuccess && <p className="success-message text-success" >Item added to list successfully</p>
+                        }
                     </div>
                     <div className="mt-4 d-flex ">
                         {
@@ -88,7 +88,7 @@ const FoodItemDetails = (props) => {
                     </div>
                 </div>
             </div>
-            
+
         </div>
     );
 };

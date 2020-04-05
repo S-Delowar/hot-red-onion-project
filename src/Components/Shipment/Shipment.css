@@ -1,15 +1,22 @@
 .ship-form {
     margin-top: 150px;
+    margin-bottom: 150px;
 }
 
 .ship-form input {
     display: block;
-    width: 40%;
+    width: 400px;
     margin-top: 30px;
     border-radius: 5px;
-    border: 1px solid gray;
-    padding: 5px;
+    border: 1px solid lightgray;
+    padding: 10px;
+    background-color: lightgray;
 }
 .error {
     color: red;
+}
+.cart-added-item {
+    background-color: lightgray;
+    padding: 10px;
+    border-radius: 5px;
 }

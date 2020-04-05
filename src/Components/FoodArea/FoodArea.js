@@ -7,8 +7,9 @@ import AllFoods from '../Data/foods.json';
 import FoodItem from '../FoodItem/FoodItem';
 import { useAuth } from '../Login/useAuth';
 import { Link } from 'react-router-dom';
+import { CardText } from 'react-bootstrap/Card';
 
-const FoodArea = () => {
+const FoodArea = (props) => {
     const auth = useAuth();
 
     const [foods, setFoods] = useState([]);
@@ -42,10 +43,15 @@ const FoodArea = () => {
             <div className="text-center mt-3 ">
                 
                 {
+                    props.cart.length ?                    
                     auth.user ?
-                    <button className="btn btn-danger btn-secondary">Check Out Your Food</button>
+                        <Link to="/shipment">
+                            <button className="btn btn-danger">Check Out Your Food</button>
+                        </Link>
+                        :
+                        <button disabled className="btn btn-danger">Check Out Your Food</button>
                     :
-                    <button  className="btn btn-danger btn-secondary">Check Out Your Food</button>
+                    <button disabled className="btn btn-danger">Check Out Your Food</button>
                 }
                 
             </div>
