@@ -44,7 +44,7 @@ const Login = () => {
                 returningUser ? 
                 <form onSubmit={handleSubmit(onSubmit)} className="py-5">
                     {
-                    auth.user == null && <p className="text-danger">* {auth.user.error.message}</p>
+                    auth.user != null && <p className="text-danger">* {auth.user.error.message}</p>
                     }
                     <div className="form-group">
                         <input name="email" className="form-control" ref={register({ required: true })} placeholder="Email"/>
