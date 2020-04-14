@@ -13,15 +13,33 @@ import Footer from '../Footer/Footer';
 
 const FoodItemDetails = (props) => {
     const { foodId } = useParams();
-
-    const currentFood = AllFoods.find(fd => fd.id == foodId);
-    //console.log(currentFood);
-    const { id, name, images, price, fullDescription } = currentFood;
-
-    const [selectedBigImg, setSelectedBigImg] = useState(images[0]);
-
+    const [currentFood, setCurrentFood] = useState([])
+    const [selectedBigImg, setSelectedBigImg] = useState(null);
     const [count, setCount] = useState(1);
     const [isSuccess, setIsSuccess] = useState(false);
+
+
+    useEffect(()=>{
+        fetch('https://serene-crag-38555.herokuapp.com/food/'+foodId)
+        .then(res => res.json())
+        .then(data => {
+            setCurrentFood(data)
+        })
+        .catch(err => console.log(err))
+
+        if(currentFood.images){
+            setSelectedBigImg(currentFood.images[0])
+        }
+    },[currentFood.name])
+
+    console.log('currentFood' ,currentFood)
+
+    //const currentFood = AllFoods.find(fd => fd.id == foodId);
+    //console.log(currentFood);
+    // const { id, name, images, price, fullDescription } = currentFood;
+
+    // const [selectedBigImg, setSelectedBigImg] = useState(images[0]);
+
 
     useState(() => {
         if (currentFood.count) {
@@ -54,10 +72,10 @@ const FoodItemDetails = (props) => {
         <div className="food-details-section" >
             <div className="container foodItemDetails d-flex">
                 <div className="row"><div className="col-6">
-                    <h1>{name}</h1>
-                    <p>{fullDescription}</p>
+                    <h1>{currentFood.name}</h1>
+                    <p>{currentFood.fullDescription}</p>
                     <div className="row d-flex">
-                        <h3>${price}</h3>
+                        <h3>${currentFood.price}</h3>
                         <div className="count ">
                             <button onClick={() => setCount(count === 1 ? 1 : count - 1)} className="btn mr-2 ">-</button>
                             {count}
@@ -75,10 +93,10 @@ const FoodItemDetails = (props) => {
                         }
                     </div>
                     <div className="mt-4 d-flex ">
-                        {
-                            images.map((img, index) =>
-                                <img id={id} onClick={() => setSelectedBigImg(images[index])}
-                                    className={images[index] === selectedBigImg ? "mr-4 small-img active-small-img" : "mr-4 small-img"} src={img} alt="" />
+                       {    currentFood.images &&
+                            currentFood.images.map((img, index) =>
+                                <img id={currentFood.id} onClick={() => setSelectedBigImg(currentFood.images[index])}
+                                    className={currentFood.images[index] === selectedBigImg ? "mr-4 small-img active-small-img" : "mr-4 small-img"} src={img} alt="" />
                             )
                         }
                     </div>

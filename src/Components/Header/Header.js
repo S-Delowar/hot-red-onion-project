@@ -57,6 +57,9 @@ const Header = (props) => {
                                             <button className="btn btn-danger">Sign Up</button>
                                         </Link>
                                 }
+                                {/* <Link to="/inventory" className="nav-link">
+                                            <button className="btn btn-secondary">Inventory</button>
+                                </Link> */}
                             </Nav>
                         </Navbar.Collapse>
                     </div>

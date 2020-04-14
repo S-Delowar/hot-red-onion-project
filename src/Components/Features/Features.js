@@ -8,8 +8,13 @@ import SingleFeature from '../SingleFeature/SingleFeature';
 const Features = () => {
     const[features, setFeatures] = useState([]);
     useEffect(()=>{
-        setFeatures(AllFeatures)
-    },[])
+        fetch('https://serene-crag-38555.herokuapp.com/features')
+        .then(res => res.json())
+        .then(data => {
+            setFeatures(data)
+        })
+        console.log(features)     
+    },[features.length])
     //console.log(features);
     return (
         <div className="container features-area">

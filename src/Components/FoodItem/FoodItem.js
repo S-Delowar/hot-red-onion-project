@@ -1,26 +1,9 @@
 import React from 'react';
 import './FoodItem.css';
-import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const FoodItem = (props) => {
     const { id, name, shortDescription, price, images } = props.food;
-
-    const cardStyle = {
-        
-    
-    }
-    const cardFooterStyle ={
-        border: 'none',
-        backgroundColor: 'white'
-    }
-    const cardImageStyle ={
-        width: "60%",
-        height: "60%",
-    display: "block",
-    paddingTop: "10px",
-    margin: "0 auto"
-    }
 
     return (
         <div className="col-md-4 mb-4">

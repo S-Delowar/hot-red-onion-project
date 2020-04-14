@@ -20,6 +20,7 @@ import { createContext } from 'react';
 import { AuthContextProvider, PrivateRoute } from './Components/Login/useAuth';
 import Shipment from './Components/Shipment/Shipment';
 import OrderComplete from './Components/OrderComplete/OrderComplete';
+import Inventory from './Components/Inventory/Inventory';
 
 
 function App() {
@@ -79,6 +80,10 @@ function App() {
               <Login></Login>
               <Footer></Footer>
             </Route>
+            <Route path="/inventory">
+              <Header cart={cart}></Header>
+              <Inventory></Inventory>
+            </Route>
             <PrivateRoute path="/shipment">
               <Header cart={cart}></Header>
               <Shipment
@@ -87,7 +92,7 @@ function App() {
               <Footer></Footer>
             </PrivateRoute>
             <PrivateRoute path="/order-status">
-            <Header cart={cart}></Header>
+              <Header cart={cart}></Header>
               <OrderComplete></OrderComplete>
               <Footer></Footer>
             </PrivateRoute>

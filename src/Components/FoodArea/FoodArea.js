@@ -3,21 +3,27 @@ import './FoodArea.css';
 import { Nav, Container, CardDeck } from 'react-bootstrap';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import AllFoods from '../Data/foods.json';
 import FoodItem from '../FoodItem/FoodItem';
 import { useAuth } from '../Login/useAuth';
 import { Link } from 'react-router-dom';
-import { CardText } from 'react-bootstrap/Card';
 
 const FoodArea = (props) => {
     const auth = useAuth();
 
     const [foods, setFoods] = useState([]);
     const [selectedFoodType, setSelectedFoodType] = useState('Breakfast');
+    //const [selectedFoods, setSelectedFoods] = useState([])
+    //const [selectedFoods, setSelectedFoods] = useState([])
     useEffect(() => {
-        setFoods(AllFoods);
-    }, [])
-    const selectedFoods = foods.filter(food => food.type === selectedFoodType)
+        fetch('https://serene-crag-38555.herokuapp.com/foods')
+        .then(res => res.json())
+        .then(data => {
+            setFoods(data)
+        })
+        console.log(foods)
+    }, [foods.length])
+    
+    const  selectedFoods= foods.filter(food => food.type == selectedFoodType)
 
     return (
         <div className="container food-area my-5">
